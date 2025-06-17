@@ -85,7 +85,7 @@ fun HoldingScreen(viewModel: HoldingViewModel = hiltViewModel()) {
                             }
                         }
                         summary?.let {
-                            
+
                             Box(
                                 modifier = Modifier
                                     .align(Alignment.BottomCenter)
