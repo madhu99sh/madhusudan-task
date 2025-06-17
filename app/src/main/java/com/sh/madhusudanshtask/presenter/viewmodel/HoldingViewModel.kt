@@ -22,9 +22,8 @@ import javax.inject.Inject
 class HoldingViewModel @Inject constructor(
     private val getHoldingsUseCase: GetHoldingsUseCase,
     private val calculateHoldingsUseCase: CalculateHoldingsUseCase,
-    @ApplicationContext private val context: Context
+    networkMonitor: NetworkMonitor
 ) : ViewModel() {
-    private val networkMonitor = NetworkMonitor(context)
     val isConnected = networkMonitor.isConnected
 
     private val _uiState = MutableStateFlow<HoldingUiState>(HoldingUiState.Loading)

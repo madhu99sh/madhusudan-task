@@ -48,8 +48,6 @@ fun HoldingScreen(viewModel: HoldingViewModel = hiltViewModel()) {
     val currentRefreshCallback by rememberUpdatedState(viewModel::refreshHoldings)
 
 
-
-
     Column {
         if (isOfflineData) {
             Box(
@@ -72,7 +70,6 @@ fun HoldingScreen(viewModel: HoldingViewModel = hiltViewModel()) {
                 is HoldingUiState.Loading -> CircularProgressIndicator()
 
                 is HoldingUiState.Success -> {
-
                     SwipeRefresh(
                         state = rememberSwipeRefreshState(isRefreshing),
                         onRefresh = currentRefreshCallback
@@ -100,8 +97,6 @@ fun HoldingScreen(viewModel: HoldingViewModel = hiltViewModel()) {
                             }
                         }
                     }
-
-
                 }
 
                 is HoldingUiState.Error -> Text(
